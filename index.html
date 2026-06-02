@@ -67,12 +67,12 @@ body{
     radial-gradient(ellipse 45% 35% at 5% 90%, rgba(122,173,142,0.22) 0%, transparent 55%),
     radial-gradient(ellipse 90% 75% at 50% 50%, rgba(122,63,160,0.18) 0%, transparent 68%),
     linear-gradient(155deg, #2a0f45 0%, #1e0835 20%, #3d1460 45%, #1a0d2e 65%, #0d1f18 100%);
-  background-size:200% 200%;
-  animation:meshDrift 90s ease-in-out infinite alternate;
+  animation:meshBreath 12s ease-in-out infinite alternate;
+  transform:translateZ(0);
 }
-@keyframes meshDrift{
-  0%{background-position:0% 0%,100% 0%,100% 100%,0% 100%,50% 50%,0% 0%}
-  100%{background-position:45% 55%,55% 45%,25% 75%,75% 25%,50% 50%,100% 100%}
+@keyframes meshBreath{
+  0%{opacity:.95}
+  100%{opacity:1}
 }
 
 /* Botanical SVG overlay — subtle leaf shapes */
@@ -102,8 +102,7 @@ body{
 .hearts-bg span{
   position:absolute;bottom:-60px;
   animation:floatUp linear infinite;
-  filter:drop-shadow(0 0 8px rgba(212,168,67,.6));
-  will-change:transform,opacity;
+  filter:drop-shadow(0 0 6px rgba(212,168,67,.5));
 }
 @keyframes floatUp{
   0%{transform:translateY(0) translateX(0) scale(.7) rotate(0deg);opacity:0}
@@ -244,9 +243,7 @@ body{
   background:rgba(30,8,53,0.65);
   border:1px solid rgba(212,168,67,0.28);
   border-radius:40px;
-  backdrop-filter:blur(16px);
-  box-shadow:0 40px 120px rgba(74,21,105,.55), inset 0 1px 0 rgba(255,255,255,.18);
-  animation:gateCardIn 1.3s cubic-bezier(.2,.9,.3,1.2) both;
+  backdrop-filter:blur(8px);
 }
 @keyframes gateCardIn{
   from{opacity:0;transform:translateY(60px) scale(.88)}
@@ -258,7 +255,7 @@ body{
   background:conic-gradient(from 0deg, var(--gold),var(--rose-soft),var(--violet-soft),var(--sage),var(--gold));
   filter:blur(3px);
   opacity:.45;
-  animation:spin 10s linear infinite;
+  animation:spin 16s linear infinite;
 }
 .gate-card h1{
   font-family:'Great Vibes',cursive;font-weight:400;
@@ -304,7 +301,7 @@ body{
   content:"";position:absolute;inset:-3px;border-radius:54px;z-index:-1;
   background:conic-gradient(from 0deg, var(--gold),var(--rose-soft),var(--violet-soft),var(--sage-light),var(--gold));
   filter:blur(12px);opacity:.9;
-  animation:spin 3.8s linear infinite;
+  animation:spin 6s linear infinite;
 }
 .btn-yes::after{
   content:"";position:absolute;inset:0;border-radius:50px;
@@ -320,7 +317,7 @@ body{
 .btn-no{
   background:rgba(255,255,255,.12);
   color:#fff;border:1.5px solid rgba(255,255,255,.45);
-  backdrop-filter:blur(10px);
+  backdrop-filter:blur(4px);
   padding:17px 46px;font-size:21px;
   transition:transform .25s, box-shadow .3s, background .3s;
   box-shadow:0 8px 24px rgba(0,0,0,.2);
@@ -338,7 +335,7 @@ body{
 #noPopup{
   position:fixed;inset:0;z-index:2000;
   display:flex;align-items:center;justify-content:center;
-  background:rgba(17,8,32,.80);backdrop-filter:blur(10px);
+  background:rgba(17,8,32,.80);backdrop-filter:blur(6px);
   opacity:0;pointer-events:none;
   transition:opacity .4s ease;
 }
@@ -348,7 +345,7 @@ body{
   background:rgba(30,8,53,0.70);
   border:1px solid rgba(212,168,67,.28);
   border-radius:38px;
-  backdrop-filter:blur(16px);
+  backdrop-filter:blur(8px);
   padding:52px 44px 44px;
   max-width:520px;width:90%;
   text-align:center;color:#fff;
@@ -400,7 +397,7 @@ body{
 .no-popup-cta::before{
   content:"";position:absolute;inset:-3px;border-radius:54px;z-index:-1;
   background:conic-gradient(from 0deg,var(--gold),var(--rose-soft),var(--violet-soft),var(--sage),var(--gold));
-  filter:blur(10px);opacity:.85;animation:spin 3.5s linear infinite;
+  filter:blur(10px);opacity:.85;animation:spin 6s linear infinite;
 }
 .no-popup-cta:hover{transform:scale(1.1);box-shadow:0 20px 50px rgba(240,204,106,.45)}
 .no-popup-close{
@@ -631,12 +628,13 @@ section.block{padding:90px 24px;position:relative;content-visibility:auto;contai
   gap:30px;
 }
 .card{
-  background:rgba(30,8,53,0.55);backdrop-filter:blur(10px);
+  background:rgba(30,8,53,0.55);backdrop-filter:blur(6px);
   border-radius:28px;overflow:hidden;
   box-shadow:0 20px 50px var(--shadow);
   border:1px solid rgba(212,168,67,.22);
   transition:transform .55s cubic-bezier(.2,.9,.3,1.2), box-shadow .55s;
   position:relative;transform-style:preserve-3d;will-change:transform;
+  contain:layout style;
 }
 .card::before{
   content:"";position:absolute;inset:0;
@@ -741,7 +739,7 @@ section.block{padding:90px 24px;position:relative;content-visibility:auto;contai
 .letter-wrap::before{bottom:-12px;top:12px;z-index:-2;transform:rotate(-.8deg)}
 .letter-wrap::after{bottom:-6px;top:6px;z-index:-1;transform:rotate(.5deg)}
 .letter{
-  background:rgba(253,246,238,.88);backdrop-filter:blur(12px);
+  background:rgba(253,246,238,.88);backdrop-filter:blur(6px);
   padding:70px 52px 56px;border-radius:28px;
   box-shadow:0 30px 80px rgba(74,21,105,.28);
   border:1px solid rgba(212,168,67,.35);
@@ -1003,6 +1001,7 @@ footer{
    TAHSEEN BUTTON
 ============================== */
 #tahseenBtn{
+  display:none;
   position:fixed;bottom:82px;right:24px;z-index:1500;
   padding:12px 20px;border-radius:30px;border:none;cursor:pointer;
   background:rgba(34,120,80,0.18);
@@ -1135,7 +1134,7 @@ footer{
   position:fixed;inset:0;z-index:3000;
   display:flex;align-items:center;justify-content:center;
   background:rgba(11,5,22,0.92);
-  backdrop-filter:blur(18px);
+  backdrop-filter:blur(8px);
   opacity:0;pointer-events:none;
   transition:opacity .4s ease;
 }
@@ -1158,7 +1157,7 @@ footer{
   content:"";position:absolute;inset:-2px;border-radius:38px;z-index:-1;
   background:conic-gradient(from 0deg,var(--gold),var(--violet-soft),var(--rose-soft),var(--sage),var(--gold));
   filter:blur(5px);opacity:.30;
-  animation:spin 10s linear infinite;
+  animation:spin 16s linear infinite;
 }
 
 .passcode-icon{font-size:44px;margin-bottom:8px;display:block}
@@ -1461,7 +1460,7 @@ footer{
 ============================== */
 #lightbox{
   position:fixed;inset:0;z-index:6000;
-  background:rgba(5,2,12,0.96);backdrop-filter:blur(20px);
+  background:rgba(5,2,12,0.96);backdrop-filter:blur(10px);
   display:flex;align-items:center;justify-content:center;
   opacity:0;pointer-events:none;
   transition:opacity .35s ease;
@@ -1549,6 +1548,85 @@ body.day-mode .section-title{filter:drop-shadow(0 3px 10px rgba(212,168,67,.30))
   100%{transform:translateY(-20px) scale(.95)}
 }
 .sw-stars{font-size:32px;margin-top:16px;animation:swFloat 2.8s ease .1s forwards;opacity:0;animation-fill-mode:both}
+
+/* ==============================
+   SACRED PHOTO — أول صورة لينا
+============================== */
+.us-sacred-card{
+  background:rgba(20,8,38,0.72)!important;
+  border:1px solid rgba(212,168,67,0.45)!important;
+  box-shadow:0 0 0 1px rgba(212,168,67,.18), 0 30px 90px rgba(212,168,67,.18), 0 0 60px rgba(176,122,212,.12)!important;
+  padding:36px 28px 32px!important;
+}
+.us-sacred-card::before{
+  content:"";position:absolute;inset:-2px;border-radius:34px;z-index:-1;
+  background:conic-gradient(from 0deg,var(--gold),var(--rose-soft),var(--violet-soft),var(--sage-light),var(--gold-bright),var(--gold));
+  filter:blur(5px);opacity:.35;
+  animation:spin 12s linear infinite;
+}
+.sacred-halo{
+  position:absolute;inset:-30px;border-radius:50%;pointer-events:none;
+  background:radial-gradient(ellipse 70% 50% at 50% 50%, rgba(212,168,67,.12) 0%, transparent 70%);
+  animation:auraBreath 6s ease-in-out infinite alternate;
+}
+.sacred-frame-wrap{
+  position:relative;
+  width:min(380px,88vw);
+  margin:18px auto 0;
+  display:flex;align-items:center;justify-content:center;
+}
+.sacred-rays{
+  position:absolute;inset:-40px;
+  background:conic-gradient(
+    from 0deg,
+    transparent 0deg,rgba(212,168,67,.10) 10deg,transparent 20deg,
+    transparent 30deg,rgba(240,204,106,.07) 40deg,transparent 50deg,
+    transparent 60deg,rgba(212,168,67,.09) 70deg,transparent 80deg,
+    transparent 90deg,rgba(240,204,106,.07) 100deg,transparent 110deg,
+    transparent 120deg,rgba(212,168,67,.10) 130deg,transparent 140deg,
+    transparent 150deg,rgba(240,204,106,.07) 160deg,transparent 170deg,
+    transparent 180deg,rgba(212,168,67,.10) 190deg,transparent 200deg,
+    transparent 210deg,rgba(240,204,106,.07) 220deg,transparent 230deg,
+    transparent 240deg,rgba(212,168,67,.09) 250deg,transparent 260deg,
+    transparent 270deg,rgba(240,204,106,.07) 280deg,transparent 290deg,
+    transparent 300deg,rgba(212,168,67,.10) 310deg,transparent 320deg,
+    transparent 330deg,rgba(240,204,106,.07) 340deg,transparent 350deg
+  );
+  border-radius:50%;
+  animation:spin 30s linear infinite;
+  pointer-events:none;
+}
+.sacred-orbit1{
+  position:absolute;inset:-16px;border-radius:50%;
+  border:1px solid rgba(212,168,67,.30);
+  animation:spin 18s linear infinite;
+  pointer-events:none;
+}
+.sacred-orbit1::before{content:"✦";position:absolute;top:-9px;left:50%;transform:translateX(-50%);font-size:12px;color:var(--gold);opacity:.9}
+.sacred-orbit1::after{content:"✦";position:absolute;bottom:-9px;left:50%;transform:translateX(-50%);font-size:12px;color:var(--gold);opacity:.9}
+.sacred-orbit2{
+  position:absolute;inset:-28px;border-radius:50%;
+  border:1px dashed rgba(176,122,212,.22);
+  animation:spin 28s linear infinite reverse;
+  pointer-events:none;
+}
+.sacred-orbit2::before{content:"✿";position:absolute;right:-10px;top:50%;transform:translateY(-50%);font-size:13px;color:var(--rose-soft);opacity:.65}
+.sacred-orbit2::after{content:"✿";position:absolute;left:-10px;top:50%;transform:translateY(-50%);font-size:13px;color:var(--sage);opacity:.55}
+.sacred-photo{
+  width:100%;border-radius:24px;display:block;
+  box-shadow:
+    0 0 0 3px rgba(212,168,67,.40),
+    0 0 0 7px rgba(212,168,67,.12),
+    0 0 50px rgba(212,168,67,.22),
+    0 24px 70px rgba(74,21,105,.50);
+  filter:saturate(1.08) brightness(1.04);
+  transition:transform 1.4s cubic-bezier(.2,.9,.3,1.1), box-shadow .8s;
+  position:relative;z-index:1;
+}
+.sacred-photo:hover{
+  transform:scale(1.03);
+  box-shadow:0 0 0 3px rgba(212,168,67,.6), 0 0 0 9px rgba(212,168,67,.15), 0 0 70px rgba(212,168,67,.30), 0 28px 80px rgba(74,21,105,.55);
+}
 
 </style>
 </head>
@@ -1654,6 +1732,22 @@ body.day-mode .section-title{filter:drop-shadow(0 3px 10px rgba(212,168,67,.30))
             <span class="small">إنتي مش عاجبك فيها شكلك… بس أنا مغرم بالصورة وبيكي فيها ❤️</span>
           </p>
         </div>
+        <!-- SACRED PHOTO — لينا حلوة سوا -->
+        <div class="us-card us-sacred-card reveal-right" style="position:relative;">
+          <div class="us-card-glow"></div>
+          <div class="sacred-halo" aria-hidden="true"></div>
+          <span class="us-tag" style="background:linear-gradient(135deg,rgba(212,168,67,.55),rgba(176,122,212,.45));letter-spacing:.10em;">✦ مقدّس ✦</span>
+          <div style="position:relative;">
+            <div class="sacred-rays" style="inset:-20px;border-radius:18px;" aria-hidden="true"></div>
+            <img class="us-photo sacred-photo" loading="lazy" decoding="async"
+              src="https://raw.githubusercontent.com/secret-ss26/pics/main/us_pic.jpg"
+              alt="أول صورة لينا حلوة سوا"/>
+          </div>
+          <p class="us-cap">تاني صورة لينا حلوة سوا
+            <span class="small" style="color:rgba(240,204,106,.85);">✦ معشوقتي وحبيبتي… يابخت الزمن اللي كانوا قاعدين فيه سوا ✦</span>
+          </p>
+        </div>
+
         <div class="us-card reveal-right">
           <div class="us-card-glow"></div>
           <span class="us-tag">تاني قهوة ☕</span>
@@ -2051,6 +2145,13 @@ body.day-mode .section-title{filter:drop-shadow(0 3px 10px rgba(212,168,67,.30))
   </div>
   <div class="secret-gallery">
     <div class="secret-card">
+      <div class="vid-placeholder" data-src="https://raw.githubusercontent.com/secret-ss26/pics/main/us.MP4">
+        <div class="vid-play-btn">▶</div>
+        <div class="vid-label">🎥 اضغط للتشغيل</div>
+      </div>
+      <div class="secret-cap">يابخت شريف بتاع الصبح 🌅</div>
+    </div>
+    <div class="secret-card">
       <div class="vid-placeholder" data-src="https://raw.githubusercontent.com/shekojinxx/vids/main/IMG_9068.MOV">
         <div class="vid-play-btn">▶</div>
         <div class="vid-label">🎥 اضغط للتشغيل</div>
@@ -2145,8 +2246,8 @@ body.day-mode .section-title{filter:drop-shadow(0 3px 10px rgba(212,168,67,.30))
   window.onYouTubeIframeAPIReady = function(){
     player = new YT.Player('ytPlayer', {
       height: '90', width: '160',
-      videoId: 'zNabqPd_qNQ',
-      playerVars: { autoplay:0, controls:0, playsinline:1, modestbranding:1, rel:0, fs:0, disablekb:1 },
+      videoId: 'oaphfkOEqX4',
+      playerVars: { autoplay:0, controls:0, playsinline:1, modestbranding:1, rel:0, fs:0, disablekb:1, start:188 },
       events: {
         onReady: function(){
           ready = true;
@@ -2197,7 +2298,7 @@ window.addEventListener('scroll',()=>{
 ============================================ */
 const bg = document.getElementById('heartsBg');
 const floatChars = ['✦','✿','❀','✨','🌿','💛','🌸','⋆','◈'];
-for(let i=0;i<5;i++){
+for(let i=0;i<3;i++){
   const s = document.createElement('span');
   s.textContent = floatChars[Math.floor(Math.random() * floatChars.length)];
   s.style.left = Math.random()*100+'vw';
@@ -2214,9 +2315,7 @@ for(let i=0;i<5;i++){
 (function(){
   const ffData = [
     {l:12,t:22,dur:6.5,fade:3.8,op1:.35,op2:.80,tx1:18,ty1:-14,tx2:-12,ty2:22,tx3:24,ty3:9,tx4:-16,ty4:-18},
-    {l:72,t:70,dur:9.5,fade:6.0,op1:.45,op2:.82,tx1:-16,ty1:-20,tx2:20,ty2:14,tx3:-24,ty3:8,tx4:18,ty4:-16},
-    {l:90,t:60,dur:6.2,fade:3.2,op1:.44,op2:.86,tx1:12,ty1:-22,tx2:-20,ty2:10,tx3:18,ty3:16,tx4:-14,ty4:-20},
-    {l:5,t:50,dur:8.5,fade:5.2,op1:.33,op2:.77,tx1:-10,ty1:-18,tx2:20,ty2:12,tx3:-18,ty3:-14,tx4:12,ty4:20}
+    {l:72,t:70,dur:9.5,fade:6.0,op1:.45,op2:.82,tx1:-16,ty1:-20,tx2:20,ty2:14,tx3:-24,ty3:8,tx4:18,ty4:-16}
   ];
   ffData.forEach(d=>{
     const f=document.createElement('div');
@@ -2258,16 +2357,13 @@ function draw(){
   _frame++;
   if(_frame%3===0){
     ctx.clearRect(0,0,W,H);
-    ctx.shadowBlur=12;
     for(const p of parts){
       p.x+=p.vx; p.y+=p.vy;
       if(p.x<0||p.x>W) p.vx*=-1;
       if(p.y<0||p.y>H) p.vy*=-1;
-      ctx.shadowColor=`hsla(${p.hue},80%,65%,0.4)`;
       ctx.fillStyle=`hsla(${p.hue},85%,72%,${p.a})`;
       ctx.beginPath(); ctx.arc(p.x,p.y,p.r*1.6,0,Math.PI*2); ctx.fill();
     }
-    ctx.shadowBlur=0;
   }
   _rafId=requestAnimationFrame(draw);
 }
@@ -2319,6 +2415,8 @@ function triggerYes(){
   noPopup.style.transition='none';
   document.getElementById('gate').classList.add('hide');
   document.getElementById('main').classList.add('show');
+  // Show tahseen button after entering main page
+  setTimeout(()=>{ document.getElementById('tahseenBtn').style.display='block'; }, 1800);
   // Show secret button after entering main page
   setTimeout(()=>{ document.getElementById('secretBtn').classList.add('visible'); }, 1800);
   for(let i=0;i<55;i++){
@@ -2348,20 +2446,30 @@ noPopup.addEventListener('click',(e)=>{ if(e.target===noPopup) closeNoPopup(); }
 btnYes.addEventListener('click', triggerYes);
 
 /* ============================================
-   CLICK → SPARKLE POP
+   CLICK → SPARKLE POP  (pool of 12)
 ============================================ */
+const _sparkPool = [];
+function _getSparkEl(){
+  for(const el of _sparkPool){ if(!el.parentNode){ return el; } }
+  const el = document.createElement('div');
+  el.className='click-heart';
+  _sparkPool.push(el);
+  return el;
+}
 document.addEventListener('click',(e)=>{
   if(e.target.closest('button')) return;
-  for(let i=0;i<4;i++){
-    const h=document.createElement('div');
-    h.className='click-heart';
+  for(let i=0;i<2;i++){
+    const h=_getSparkEl();
     h.textContent=sparkChars[Math.floor(Math.random()*sparkChars.length)];
     h.style.left=(e.clientX+(Math.random()-.5)*50)+'px';
     h.style.top=(e.clientY+(Math.random()-.5)*30)+'px';
     h.style.fontSize=(14+Math.random()*20)+'px';
     h.style.color=['#f0cc6a','#e8a0bf','#b07ad4','#7aad8e','#fff'][Math.floor(Math.random()*5)];
+    h.style.animation='none';
     document.body.appendChild(h);
-    setTimeout(()=>h.remove(),1200);
+    void h.offsetWidth;
+    h.style.animation='';
+    setTimeout(()=>{ if(h.parentNode) h.parentNode.removeChild(h); },1200);
   }
 });
 
@@ -2397,10 +2505,14 @@ document.querySelectorAll('.card,.reason,.date-card').forEach(card=>{
 ============================================ */
 const heroFrame = document.querySelector('.frame-wrap');
 if(heroFrame){
+  let _pxRaf=null, _ppx=0, _ppy=0;
   addEventListener('mousemove',(e)=>{
-    const px=(e.clientX/innerWidth-.5);
-    const py=(e.clientY/innerHeight-.5);
-    heroFrame.style.transform=`translate(${px*16}px,${py*16}px)`;
+    _ppx=(e.clientX/innerWidth-.5);
+    _ppy=(e.clientY/innerHeight-.5);
+    if(!_pxRaf) _pxRaf=requestAnimationFrame(()=>{
+      heroFrame.style.transform=`translate(${_ppx*16}px,${_ppy*16}px)`;
+      _pxRaf=null;
+    });
   });
 }
 
