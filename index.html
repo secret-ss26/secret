@@ -67,7 +67,6 @@ body{
     radial-gradient(ellipse 45% 35% at 5% 90%, rgba(122,173,142,0.22) 0%, transparent 55%),
     radial-gradient(ellipse 90% 75% at 50% 50%, rgba(122,63,160,0.18) 0%, transparent 68%),
     linear-gradient(155deg, #2a0f45 0%, #1e0835 20%, #3d1460 45%, #1a0d2e 65%, #0d1f18 100%);
-  animation:meshBreath 12s ease-in-out infinite alternate;
   transform:translateZ(0);
 }
 @keyframes meshBreath{
@@ -218,7 +217,6 @@ body{
     rgba(122,173,142,.07) 290deg,
     transparent 330deg
   );
-  animation:spin 26s linear infinite;
 }
 #gate::after{
   content:"";position:absolute;inset:0;
@@ -226,7 +224,6 @@ body{
     radial-gradient(circle 320px at 18% 72%, rgba(155,45,111,.30) 0%, transparent 70%),
     radial-gradient(circle 260px at 82% 28%, rgba(212,168,67,.25) 0%, transparent 70%),
     radial-gradient(circle 210px at 58% 82%, rgba(74,21,105,.35) 0%, transparent 70%);
-  animation:blobMove 16s ease-in-out infinite alternate;
   pointer-events:none;
 }
 @keyframes blobMove{
@@ -255,7 +252,6 @@ body{
   background:conic-gradient(from 0deg, var(--gold),var(--rose-soft),var(--violet-soft),var(--sage),var(--gold));
   filter:blur(3px);
   opacity:.45;
-  animation:spin 16s linear infinite;
 }
 .gate-card h1{
   font-family:'Great Vibes',cursive;font-weight:400;
@@ -358,7 +354,6 @@ body{
   content:"";position:absolute;inset:-2px;border-radius:40px;z-index:-1;
   background:conic-gradient(from 0deg,var(--gold),var(--rose-soft),var(--violet-soft),var(--sage),var(--gold));
   filter:blur(4px);opacity:.45;
-  animation:spin 8s linear infinite;
 }
 .no-popup-icon{font-size:62px;margin-bottom:16px;display:block;animation:beat 1.3s ease-in-out infinite}
 .no-popup-title{
@@ -397,7 +392,7 @@ body{
 .no-popup-cta::before{
   content:"";position:absolute;inset:-3px;border-radius:54px;z-index:-1;
   background:conic-gradient(from 0deg,var(--gold),var(--rose-soft),var(--violet-soft),var(--sage),var(--gold));
-  filter:blur(10px);opacity:.85;animation:spin 6s linear infinite;
+  filter:blur(10px);opacity:.85;
 }
 .no-popup-cta:hover{transform:scale(1.1);box-shadow:0 20px 50px rgba(240,204,106,.45)}
 .no-popup-close{
@@ -509,7 +504,6 @@ body{
 .orbit1{
   position:absolute;inset:-20px;border-radius:50%;
   border:1px solid rgba(212,168,67,.28);
-  animation:spin 22s linear infinite;
 }
 .orbit1::before{
   content:"✦";position:absolute;top:-8px;left:50%;transform:translateX(-50%);
@@ -522,7 +516,6 @@ body{
 .orbit2{
   position:absolute;inset:-36px;border-radius:50%;
   border:1px dashed rgba(176,122,212,.22);
-  animation:spin 34s linear infinite reverse;
 }
 .orbit2::before{
   content:"✿";position:absolute;right:-10px;top:50%;transform:translateY(-50%);
@@ -540,7 +533,7 @@ body{
 }
 @keyframes heroFloat{
   0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-18px)}
+  50%{transform:translateY(-8px)}
 }
 .frame img{
   width:100%;height:100%;object-fit:cover;display:block;
@@ -697,7 +690,6 @@ section.block{padding:90px 24px;position:relative;content-visibility:auto;contai
   position:absolute;inset:-4px;border-radius:34px;z-index:-1;
   background:conic-gradient(from 0deg,var(--gold),var(--rose-soft),var(--violet-soft),var(--sage),var(--gold));
   filter:blur(18px);opacity:.42;
-  animation:spin 20s linear infinite;
 }
 .us-tag{
   position:absolute;top:-16px;right:26px;
@@ -1157,7 +1149,6 @@ footer{
   content:"";position:absolute;inset:-2px;border-radius:38px;z-index:-1;
   background:conic-gradient(from 0deg,var(--gold),var(--violet-soft),var(--rose-soft),var(--sage),var(--gold));
   filter:blur(5px);opacity:.30;
-  animation:spin 16s linear infinite;
 }
 
 .passcode-icon{font-size:44px;margin-bottom:8px;display:block}
@@ -1567,7 +1558,6 @@ body.day-mode .section-title{filter:drop-shadow(0 3px 10px rgba(212,168,67,.30))
 .sacred-halo{
   position:absolute;inset:-30px;border-radius:50%;pointer-events:none;
   background:radial-gradient(ellipse 70% 50% at 50% 50%, rgba(212,168,67,.12) 0%, transparent 70%);
-  animation:auraBreath 6s ease-in-out infinite alternate;
 }
 .sacred-frame-wrap{
   position:relative;
@@ -1577,29 +1567,13 @@ body.day-mode .section-title{filter:drop-shadow(0 3px 10px rgba(212,168,67,.30))
 }
 .sacred-rays{
   position:absolute;inset:-40px;
-  background:conic-gradient(
-    from 0deg,
-    transparent 0deg,rgba(212,168,67,.10) 10deg,transparent 20deg,
-    transparent 30deg,rgba(240,204,106,.07) 40deg,transparent 50deg,
-    transparent 60deg,rgba(212,168,67,.09) 70deg,transparent 80deg,
-    transparent 90deg,rgba(240,204,106,.07) 100deg,transparent 110deg,
-    transparent 120deg,rgba(212,168,67,.10) 130deg,transparent 140deg,
-    transparent 150deg,rgba(240,204,106,.07) 160deg,transparent 170deg,
-    transparent 180deg,rgba(212,168,67,.10) 190deg,transparent 200deg,
-    transparent 210deg,rgba(240,204,106,.07) 220deg,transparent 230deg,
-    transparent 240deg,rgba(212,168,67,.09) 250deg,transparent 260deg,
-    transparent 270deg,rgba(240,204,106,.07) 280deg,transparent 290deg,
-    transparent 300deg,rgba(212,168,67,.10) 310deg,transparent 320deg,
-    transparent 330deg,rgba(240,204,106,.07) 340deg,transparent 350deg
-  );
   border-radius:50%;
-  animation:spin 30s linear infinite;
   pointer-events:none;
+  display:none;
 }
 .sacred-orbit1{
   position:absolute;inset:-16px;border-radius:50%;
   border:1px solid rgba(212,168,67,.30);
-  animation:spin 18s linear infinite;
   pointer-events:none;
 }
 .sacred-orbit1::before{content:"✦";position:absolute;top:-9px;left:50%;transform:translateX(-50%);font-size:12px;color:var(--gold);opacity:.9}
@@ -1607,7 +1581,6 @@ body.day-mode .section-title{filter:drop-shadow(0 3px 10px rgba(212,168,67,.30))
 .sacred-orbit2{
   position:absolute;inset:-28px;border-radius:50%;
   border:1px dashed rgba(176,122,212,.22);
-  animation:spin 28s linear infinite reverse;
   pointer-events:none;
 }
 .sacred-orbit2::before{content:"✿";position:absolute;right:-10px;top:50%;transform:translateY(-50%);font-size:13px;color:var(--rose-soft);opacity:.65}
@@ -2238,6 +2211,7 @@ body.day-mode .section-title{filter:drop-shadow(0 3px 10px rgba(212,168,67,.30))
 /* ============================================
    MUSIC PLAYER (YouTube IFrame)
 ============================================ */
+const _isMobile = /Mobi|Android/i.test(navigator.userAgent) || window.innerWidth < 768;
 (function(){
   var player, ready=false, wantPlay=false, btn;
   var tag = document.createElement('script');
@@ -2298,7 +2272,8 @@ window.addEventListener('scroll',()=>{
 ============================================ */
 const bg = document.getElementById('heartsBg');
 const floatChars = ['✦','✿','❀','✨','🌿','💛','🌸','⋆','◈'];
-for(let i=0;i<3;i++){
+const petalCount = _isMobile ? 1 : 3;
+for(let i=0;i<petalCount;i++){
   const s = document.createElement('span');
   s.textContent = floatChars[Math.floor(Math.random() * floatChars.length)];
   s.style.left = Math.random()*100+'vw';
@@ -2318,6 +2293,7 @@ for(let i=0;i<3;i++){
     {l:72,t:70,dur:9.5,fade:6.0,op1:.45,op2:.82,tx1:-16,ty1:-20,tx2:20,ty2:14,tx3:-24,ty3:8,tx4:18,ty4:-16}
   ];
   ffData.forEach(d=>{
+    if(_isMobile) return;
     const f=document.createElement('div');
     f.className='firefly';
     f.style.cssText=`left:${d.l}vw;top:${d.t}vh;`+
@@ -2342,7 +2318,7 @@ function resize(){ W=canvas.width=innerWidth; H=canvas.height=innerHeight; }
 resize(); addEventListener('resize',resize);
 // Mix gold, violet, sage sparkles
 const sparkleHues = [48, 270, 145, 320, 55]; // gold, violet, sage, rose, warm gold
-for(let i=0;i<8;i++){
+for(let i=0;i<4;i++){
   parts.push({
     x:Math.random()*W, y:Math.random()*H,
     r:.6+Math.random()*2.4,
@@ -2353,7 +2329,7 @@ for(let i=0;i<8;i++){
 }
 let _frame=0, _rafId=null, _paused=false;
 function draw(){
-  if(_paused){_rafId=null;return;}
+  if(_paused||_isMobile){_rafId=null;return;}
   _frame++;
   if(_frame%3===0){
     ctx.clearRect(0,0,W,H);
@@ -2419,7 +2395,8 @@ function triggerYes(){
   setTimeout(()=>{ document.getElementById('tahseenBtn').style.display='block'; }, 1800);
   // Show secret button after entering main page
   setTimeout(()=>{ document.getElementById('secretBtn').classList.add('visible'); }, 1800);
-  for(let i=0;i<55;i++){
+  const sparkleCount = _isMobile ? 20 : 55;
+  for(let i=0;i<sparkleCount;i++){
     setTimeout(()=>{
       const h=document.createElement('div');
       h.className='click-heart';
@@ -2458,7 +2435,8 @@ function _getSparkEl(){
 }
 document.addEventListener('click',(e)=>{
   if(e.target.closest('button')) return;
-  for(let i=0;i<2;i++){
+  const count = _isMobile ? 1 : 2;
+  for(let i=0;i<count;i++){
     const h=_getSparkEl();
     h.textContent=sparkChars[Math.floor(Math.random()*sparkChars.length)];
     h.style.left=(e.clientX+(Math.random()-.5)*50)+'px';
@@ -2490,6 +2468,7 @@ revealEls.forEach(el=>io.observe(el));
 /* ============================================
    3D TILT on cards
 ============================================ */
+if(!_isMobile){
 document.querySelectorAll('.card,.reason,.date-card').forEach(card=>{
   card.addEventListener('mousemove',(e)=>{
     const r=card.getBoundingClientRect();
@@ -2499,6 +2478,7 @@ document.querySelectorAll('.card,.reason,.date-card').forEach(card=>{
   });
   card.addEventListener('mouseleave',()=>{ card.style.transform=''; });
 });
+}
 
 /* ============================================
    PARALLAX HERO FRAME
